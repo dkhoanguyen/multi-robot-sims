@@ -1,0 +1,18 @@
+robot_1:
+  name: tb3_0
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  yaw: 1.57
+  robot_description_package: turtlebot3_description
+  robot_description_model_path: /urdf/turtlebot3_burger.urdf.xacro
+
+robot_2:
+  name: tb3_1
+  x: 1.0
+  y: 1.0
+  z: 0.0
+  yaw: 1.57
+  robot_description_package: turtlebot3_description
+  robot_description_model_path: /urdf/turtlebot3_burger.urdf.xacro
+
