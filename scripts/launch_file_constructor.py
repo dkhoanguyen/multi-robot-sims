@@ -1,4 +1,5 @@
 
+import yaml
 from io import TextIOWrapper
 
 class LaunchFileConstructor(object):
@@ -88,27 +89,21 @@ class LaunchFileConstructor(object):
             lf.write('</launch>\n')
 
 
-robot1_info = {
-    'name': 'tb3_0',
-    'x': 0.0,
-    'y': 0.0,
-    'z': 0.0,
-    'yaw': 1.57,
-    'robot_description_package': 'turtlebot3_description',
-    'robot_description_model_path': '/urdf/turtlebot3_burger.urdf.xacro'
-}
+def main():
+    filename = 'example.yml'
+    with open(filename, 'r') as stream:
+        try:
+            parsed_yaml = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+        
+        robots_info = []
+        for robot_info in parsed_yaml['robots'].values():
+            robots_info.append(robot_info)
 
-robot2_info = {
-    'name': 'tb3_1',
-    'x': 0.0,
-    'y': 1.0,
-    'z': 0.0,
-    'yaw': 1.57,
-    'robot_description_package': 'turtlebot3_description',
-    'robot_description_model_path': '/urdf/turtlebot3_burger.urdf.xacro'
-}
+        test = LaunchFileConstructor('multi_turtlebot3_sims','test')
+        test.set_robot_infos(robots_info)
+        test.construct()
 
-robots_info = [robot1_info,robot2_info]
-test = LaunchFileConstructor('multi_turtlebot3_sims','test')
-test.set_robot_infos(robots_info)
-test.construct()
+if __name__ == '__main__':
+    main()
