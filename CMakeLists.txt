@@ -11,7 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo
   roscpp
   rospy
-  turtlebot3_fake
   turtlebot3_gazebo
 )
 

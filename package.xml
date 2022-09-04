@@ -52,17 +52,14 @@
   <build_depend>gazebo</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
-  <build_depend>turtlebot3_fake</build_depend>
   <build_depend>turtlebot3_gazebo</build_depend>
   <build_export_depend>gazebo</build_export_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
-  <build_export_depend>turtlebot3_fake</build_export_depend>
   <build_export_depend>turtlebot3_gazebo</build_export_depend>
   <exec_depend>gazebo</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
-  <exec_depend>turtlebot3_fake</exec_depend>
   <exec_depend>turtlebot3_gazebo</exec_depend>
 
 
